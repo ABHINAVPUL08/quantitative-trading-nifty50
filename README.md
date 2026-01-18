@@ -53,6 +53,7 @@ Diagnostic visualizations (PnL vs duration, distributions, correlations)
 ### Market Regime Detection (HMM)
 Hidden Markov Model used to classify market regimes based on return dynamics.
 ![Market Regimes](plots/regime_chart.png)
+
 ### Trade Performance Analysis
 Relationship between trade duration and profitability across regimes.
 ![PnL vs Duration](plots/pnl_duration_scatter.png)
