@@ -49,6 +49,15 @@ Z-score–based outlier detection
 Robust handling of zero-trade regimes
 Diagnostic visualizations (PnL vs duration, distributions, correlations)
 
+## Sample Outputs
+### Market Regime Detection (HMM)
+Hidden Markov Model used to classify market regimes based on return dynamics.
+![Market Regimes](plots/regime_chart.png)
+### Trade Performance Analysis
+Relationship between trade duration and profitability across regimes.
+![PnL vs Duration](plots/pnl_duration_scatter.png)
+
+
 ## How to Run
 
 Install dependencies:
@@ -66,3 +75,36 @@ Risk-free rate assumed at 6.5%
 ML accuracy is not optimized for alpha; emphasis is on clean architecture
 LSTM is included as a conceptual extension; the final implementation uses tree-based ML for stability
 Zero-trade outcomes are treated as valid market conditions and handled gracefully
+
+
+## System Architecture
+
+The project follows a modular, step-by-step quantitative research pipeline:
+
+Raw Market Data (Spot / Futures / Options)
+                │
+                ▼
+        Data Cleaning & Alignment
+                │
+                ▼
+        Feature Engineering
+ (EMA, Returns, Greeks, PCR, Basis)
+                │
+                ▼
+        Regime Detection (HMM)
+                │
+                ▼
+        Trading Strategy
+     (EMA Crossover + Regime Filter)
+                │
+                ▼
+        Machine Learning Filter
+        (XGBoost Classifier)
+                │
+                ▼
+        Backtesting & Trade Logs
+                │
+                ▼
+     Outlier Analysis & Visualization
+
+Each module is implemented independently to ensure clarity, testability, and robustness.
