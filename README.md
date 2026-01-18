@@ -56,7 +56,7 @@ Hidden Markov Model used to classify market regimes based on return dynamics.
 
 ### Trade Performance Analysis
 Relationship between trade duration and profitability across regimes.
-![PnL vs Duration](equity_curve.png)
+![Trade Performance](plots/equity_curve.png)
 
 
 ## How to Run
